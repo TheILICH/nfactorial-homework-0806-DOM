@@ -1,0 +1,55 @@
+.container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.center
+{
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+}
+
+.video
+{
+    width: 100%;
+}
+
+.buttons
+{
+    /*display: flex;*/
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+    /*flex-wrap: wrap;*/
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+}
+
+.play
+{
+    margin: 10px;
+}
+
+.pause
+{
+    /*margin-right: 100px;*/
+    /*margin-left: 50px*/
+    margin: 10px;
+
+}
+
+.reset
+{
+    /*margin: 100px;*/
+    margin: 10px;
+}
+
+.video
+{
+    max-height: 500px;
+}
+
+

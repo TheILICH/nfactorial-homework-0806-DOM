@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>
+    VideoPlayer
+  </title>
+  <link rel="stylesheet" type = "text/css" href="HomeWork3.css" />
+
+
+
+</head>
+
+<body>
+<div class="container" id="container">
+  <div class="center" id="center">
+    <video class="video" id="video" src="life%20could%20be%20dream.mp4" loop width = "100%">
+      My video
+    </video>
+
+
+
+    <div class="buttons" id="buttons">
+
+      <ul>
+
+
+        <li> <input type="range" id="volume" value="100" step="5" > Volume </li>
+
+        <li>
+          <button class="play" id="play" onclick="play()">
+            Play
+          </button>
+        </li>
+
+        <li>
+          <button class="pause" id="pause" onclick="pause()">
+            Pause
+          </button>
+        </li>
+
+        <li>
+          <button class="reset" id="reset" onclick="reset()">
+            Reset
+          </button>
+        </li>
+
+        <li>
+          <!--                        <progress class="progress" id="progress" max="100" value="0" style="width: 95%; margin: 0 auto"> Bar </progress>-->
+          <input type="range" id="progress" class="progress" style="width: 95%;" max="100" value="0"> Bar
+        </li>
+
+
+      </ul>
+
+
+
+
+    </div>
+
+  </div>
+</div>
+</body>
+
+
+
+
+
+
+<script type="text/javascript">
+  let video = document.getElementById("video");
+
+  function play()
+  {
+    video.play();
+  }
+
+  function pause()
+  {
+    video.pause()
+  }
+
+  function reset()
+  {
+    video.currentTime = 0;
+    video.pause();
+  }
+
+  let volumeChanger = document.querySelector('#volume');
+
+  volumeChanger.addEventListener('input', function()
+  {
+    video.volume = volumeChanger.value / 100;
+  });
+
+  let progress = document.querySelector('#progress');
+
+  video.addEventListener('timeupdate', function()
+  {
+    progress.value = 100 * video.currentTime / video.duration;
+  });
+
+  progress.addEventListener('input', function()
+  {
+    video.currentTime = progress.value * video.duration / 100;
+  });
+
+
+
+
+</script>
+
+
+
+</html>
